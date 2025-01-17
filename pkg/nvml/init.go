@@ -19,12 +19,10 @@ import (
 	"log"
 )
 
-
-
 // nvml.Init()
 func (l *library) Init() Return {
 	if err := l.load(); err != nil {
-		log.Errorf("Unable to load library: %v", err)
+		log.Printf("Unable to load library: %v", err)
 		return ERROR_LIBRARY_NOT_FOUND
 	}
 	return nvmlInit()
